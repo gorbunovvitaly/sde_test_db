@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_demo
+    environment:
+      POSTGRES_PASSWORD: "@sde_password012"
+      POSTGRES_USER: "test_sde"
+      POSTGRES_DB: "demo"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - /Users/vs_gorbunov/IdeaProjects/sde_test_db/sql:/sql
+volumes:
+  postgres_data:
